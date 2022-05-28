@@ -1,0 +1,24 @@
+{% extends "drill_app/index.html" %}
+{% load static %}
+{% block ChangingContent %}
+<h1>Check our extensive collection of books to buy and rent!</h1>
+<form action="/drill_app/search" method="GET">
+    <div>
+        <input type="text" name="text_search" id="text_search" placeholder="Search for a book in our catalogue">
+        <input type="submit" value="Search!">
+    </div>
+<hr></hr>
+</form>
+{% if book_sell %}
+    <ul>
+        {% for book_sell in book_sell %}
+            <li>
+                Book: {{book_sell.name}}
+                -- Genre: {{book_sell.genre}}
+            
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}

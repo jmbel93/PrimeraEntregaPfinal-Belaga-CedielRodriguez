@@ -1,0 +1,18 @@
+{% extends "drill_app/index.html" %}
+{% load static %}
+{% block ChangingContent %}
+
+<h2>You have bought the following books:</h2>
+<a class="card_custom" href="{% url 'BookBuyForms' %}">Buy a new book!</a>
+<hr></hr>
+<ul>
+    {% for book_buy in book_buy %}
+        <li>
+            Book: {{book_buy.name}}
+            -- Amount: {{book_buy.amount}}
+           
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
