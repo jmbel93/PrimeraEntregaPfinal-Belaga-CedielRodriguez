@@ -1,0 +1,18 @@
+{% extends "drill_app/index.html" %}
+{% load static %}
+{% block ChangingContent %}
+
+<h2>You have rented the following books:</h2>
+<a class="card_custom" href="{% url 'BookRentForms' %}">Rent a new book!</a>
+<hr></hr>
+<ul>
+    {% for book_rent in book_rent %}
+        <li>
+            Book: {{book_rent.name}}
+            -- Rented Date: {{book_rent.rented_date}}
+           
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
