@@ -1,0 +1,17 @@
+{% extends "drill_app/index.html" %}
+{% load static %}
+{% block ChangingContent %}
+
+<h2>Tell us wich book you'll sel us!</h2>
+<hr></hr>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ book_sell.as_p }}
+
+    <input type="submit" class="btn btn-primary" value="Sell!" />
+
+</form>
+
+{% endblock %}

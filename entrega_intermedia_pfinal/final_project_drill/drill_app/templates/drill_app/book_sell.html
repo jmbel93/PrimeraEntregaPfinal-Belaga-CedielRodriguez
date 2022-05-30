@@ -1,0 +1,19 @@
+{% extends "drill_app/index.html" %}
+{% load static %}
+{% block ChangingContent %}
+
+<h2>You have sold us the following books:</h2>
+<a class="card_custom" href="{% url 'BookSellForms' %}">Sell us a book!</a>
+<hr></hr>
+<ul>
+    {% for book_sell in book_sell %}
+        <li>
+            Book: {{book_sell.name}}
+            -- Genre: {{book_sell.genre}}
+            -- Amount: {{book_sell.amount}}
+           
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
